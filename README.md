@@ -24,6 +24,10 @@ This project aims to develop a simple, browser-based card game called "Card Wars
 The game will display the cards and decks, allowing players to make moves and receive instant feedback. Additionally, there will be a simple progress indicator to keep track of the game's progression.
 The main goal of the project is to create an entertaining and educational game for all ages. It's a great way for kids to learn the rules of "Card Wars" while providing adults with a nostalgic trip down memory lane. The game aims to provide hours of enjoyment for players of all skill levels.
 
+## Target Audience
+
+The target audience for the game includes both adults and children who enjoy card games. The game is designed to be educational and entertaining, providing a fun experience for players of all ages.
+
 ## User Stories
 
 New users of the game would like to:
@@ -40,3 +44,13 @@ Returning users would like to:
 - Experience the same simple controls and feedback as before.
 - Easily track their progress in the game.
 - Explore other projects by the developer or get in touch with the developer.
+
+## Scope
+
+The scope of "Card Wars" is to develop an immersive web-based card game that caters to players of all ages, ensuring a user-friendly and engaging experience. Upon loading the page, new users will be greeted with comprehensive game rules to familiarize themselves with the gameplay and understand the basics. The game will feature a clean interface with easy-to-use controls, allowing players to start or restart the game with ease. Essential features, such as access to game rules via a dedicated button, will be readily available to enhance user experience.
+
+To emulate the experience of a traditional card game, the game's cards and decks will be prominently displayed on the screen, providing a realistic and interactive gameplay environment. The game will have a simple and playful design, resembling a hand-drawn game created with a fountain pen on paper, to capture the imagination of players and create a nostalgic feel.
+
+The design will prioritize simplicity to ensure it is understandable for children while maintaining a playful aesthetic to sustain their interest. Additionally, the game will include social links for players to easily contact or research the developer, adding a sense of community and support.
+
+Incorporating one page with a few pop-ups, such as game rules or notifications for winning or losing a match, will provide a seamless and immersive gaming experience. The design simplicity will not only enhance usability but also contribute to a fun and engaging gameplay.
