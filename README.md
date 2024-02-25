@@ -73,3 +73,19 @@ In the "Card Wars" game, the header and footer sections will transform to ensure
 
 ## Skeleton
 
+### Wireframes
+
+### Main Page
+![Main Page](assets/wireframes/index.webp)
+
+### Popup window
+![Popup Window](assets/wireframes/popup.webp)
+
+### Header
+![Header](assets/wireframes/header.webp)
+
+### Game Area
+![Game Area](assets/wireframes/game-area.webp)
+
+### Footer
+![Footer](assets/wireframes/footer.webp)
