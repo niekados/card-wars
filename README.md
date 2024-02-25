@@ -89,3 +89,15 @@ In the "Card Wars" game, the header and footer sections will transform to ensure
 
 ### Footer
 ![Footer](assets/wireframes/footer.webp)
+
+## Surface
+
+### Fonts
+
+- **Swanky and Moo Moo:** A Google Font designed by Kimberly Geswein, utilized for both the logo and the font of the playing cards. Its handwritten style contributes to the page's aesthetic, enhancing the card game's nostalgic appeal.
+
+- **Playpen Sans:** Another Google Font designed by TypeTogether, Laura Meseguer, Veronika Burian, and José Scaglione, chosen as the main font for the webpage. Its handwriting-like qualities blend well with the game's theme while maintaining excellent readability across all elements of the page.
+
+### Colours
+
+ 
