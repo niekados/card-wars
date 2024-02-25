@@ -54,3 +54,22 @@ To emulate the experience of a traditional card game, the game's cards and decks
 The design will prioritize simplicity to ensure it is understandable for children while maintaining a playful aesthetic to sustain their interest. Additionally, the game will include social links for players to easily contact or research the developer, adding a sense of community and support.
 
 Incorporating one page with a few pop-ups, such as game rules or notifications for winning or losing a match, will provide a seamless and immersive gaming experience. The design simplicity will not only enhance usability but also contribute to a fun and engaging gameplay.
+
+## Structure
+
+### Desktop
+The "Card Wars" game will be structured as a single-page application, with a focus on simplicity and intuitive gameplay controls. The main components of the game's structure include:
+
+- **Header:** The header will feature the game's logo on the left and game control buttons on the right. The logo will serve as a link to reload the page, while the control buttons will include options to restart the game, choose the deck size, and access the game rules via a pop-up. This layout will ensure easy access to key game features while maintaining a clean and organized interface.
+- **Game Information Section:** Below the header, there will be a game information section that displays game progress and feedback for each move made by the player. This section will provide real-time updates on the game's status, allowing players to track their progress and make informed decisions.
+- **Main Page Section:** The main page section will include the game decks on the left, with cards face down, and the game cards on the right, with cards face up. Computer cards will be displayed on top, and player cards will be displayed below the computer's cards. The play button will be positioned at the bottom, below the player's cards, to allow for easy access and gameplay.
+- **Footer:** The footer will feature social links, allowing players to connect with the developer on various social media platforms. This will provide players with an opportunity to engage with the developer and stay updated on game updates and news.
+
+### Responsive Design
+In the "Card Wars" game, the header and footer sections will transform to ensure a seamless experience on smaller screens.
+
+- **Header:** On small screens, the header will be displayed in a column layout, with the logo centered at the top of the screen. The game control buttons will be positioned below the logo, with smaller buttons to fit the screen size. This layout will maintain the functionality of the header while optimizing the user experience for smaller screens.
+- **Footer:** Similarly, the footer will transform into a column layout on small screens. The social links will be displayed in a row at the top of the column, followed by the developer's name in a row at the bottom. This layout will ensure that all elements of the footer remain visible and accessible on smaller screens, enhancing the overall user experience.
+
+## Skeleton
+
