@@ -98,6 +98,11 @@ main {
     background-color: #fffdf7;
 }
 
+/* Colour for red suit cards */
+.red {
+    color: #c73f4c;
+}
+
 /* Button containers */
 
 /* Header button controls */
@@ -145,6 +150,11 @@ main {
 
 #play-button:hover {
     border: dashed 4px #084194;
+}
+
+/* Utility - hide HTML elements */
+.hidden {
+    visibility: hidden;
 }
 
 /* Footer */
