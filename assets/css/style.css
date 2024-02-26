@@ -211,6 +211,8 @@ footer {
 
 /* Sweetalert2 styles */
 /* !important is used to override the default Sweetalert2 settings */
+
+/* Sweetalert2 button */
 .swal-button {
     font-family: "Playpen Sans", cursive !important;
     background-color: #fffdf7 !important;
@@ -224,5 +226,11 @@ footer {
     outline: none !important;
     box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2) !important;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
-
 }
+
+.swal-button:hover{
+    box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3) !important;
+    border: dashed 3px #084194 !important;
+    background-color: #fffdf7 !important;
+    background-image: none !important; 
+ }
