@@ -22,10 +22,13 @@ buttons.forEach(button => button.addEventListener('click', (event) => {
     // Removes "focus" from all buttons
     button.blur()
 
+    // Reset button
     if (buttonType === 'reset') {
         resetGame()
         startGame()
     }
+
+    // Deck Size button (small)
     if (buttonType === 'small-deck') {
         button.setAttribute('data-type', 'large-deck');
         button.innerHTML = '<i class="fa-solid fa-layer-group"></i> Large';
@@ -33,6 +36,8 @@ buttons.forEach(button => button.addEventListener('click', (event) => {
         resetGame()
         startGame()
     }
+
+    // Deck Size button (large)
     if (buttonType === 'large-deck') {
         button.setAttribute('data-type', 'small-deck');
         button.innerHTML = '<i class="fa-solid fa-layer-group"></i> Small';
@@ -40,10 +45,23 @@ buttons.forEach(button => button.addEventListener('click', (event) => {
         resetGame()
         startGame()
     }
+
+    // Game rules button
     if (buttonType === "info") {
         gameRules()
     }
+
+    // Play button
     if (buttonType === 'play') {
         playGame()
     }
 }))
+
+// Add event listeners to play game with "spacebar" or "enter" keys
+document.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      if (!playButton.classList.contains('hidden')) {
+        playGame();
+      }
+    }
+  })
