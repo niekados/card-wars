@@ -164,3 +164,22 @@ function startGame() {
     playerDeck = assignCards(playerDeck);
     computerDeck = assignCards(computerDeck);  
   }
+
+/**
+ * Resets the game by clearing all card decks and restarting the game state.
+ */
+  function resetGame() {
+    playerDeck = null;
+    computerDeck = null;
+    warDeck = [];
+    displayComputerCard.textContent = '';
+    displayPlayerCard.textContent = '';
+    displayMoveInfo.textContent = '';
+    computerCardBack.textContent = '';
+    playerCardBack.textContent = '';
+    playButton.classList.remove('hidden');
+    displayPlayerCard.classList.remove('hidden');
+    displayComputerCard.classList.remove('hidden');
+    movesCounter.textContent = 0;
+    hiddeAllCards()
+  }
