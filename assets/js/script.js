@@ -7,7 +7,7 @@ let computerCardBack = document.getElementById('computer-card-back');
 let playerCardBack = document.getElementById('player-card-back');
 let playButton = document.getElementById('play-button');
 
-// Variables
+// Game variables
 let deckSize = 'small';
 let playerDeck;
 let computerDeck;
@@ -154,4 +154,13 @@ function assignCards(player) {
       }
     }
     return cardDeck
+  }
+
+/**
+ * Starts the game by assigning card decks to the computer and player.
+ */
+function startGame() {
+    assignCardColours();
+    playerDeck = assignCards(playerDeck);
+    computerDeck = assignCards(computerDeck);  
   }
