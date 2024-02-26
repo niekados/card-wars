@@ -118,3 +118,13 @@ To deploy your project to GitHub Pages:
 - Under the “Branch” drop-down menu, select “main” branch.
 - Click "Save." (It may take a few minutes for the GitHub Pages to deploy).
 - GitHub Pages will provide you with a link to your deployed website. The Deployed website address pattern is usually: "https://yourusername.github.io/your-repository/".
+
+## Technologies Used
+- JavaScript - a programming language commonly used to create dynamic, interactive web pages.
+- CSS - Cascading Style Sheets is a style sheet language used for specifying the presentation and styling.
+- HTML - HyperText Markup Language is a markup language that defines the content and structure of web content.
+- [GitPod](https://www.gitpod.io/) - cloud development environment. 
+- [Balsamiq](https://balsamiq.com/) - low-fidelity wireframing tool.
+- [RedKetchup Favicon Generator](https://redketchup.io/favicon-generator) - to generate Favicon from an emoji.
+- [Google Fonts](https://fonts.google.com/) - used to add fonts to the logo, navigation links and main content.
+- [Colour Contrast Checker](https://colourcontrast.cc/) - colour contrast checker for the background and fonts.
