@@ -60,7 +60,7 @@ header {
     height: 39px;
 }
 
-#move-info  {
+#move-info {
     font-size: 1.5rem;
     font-weight: 700;
     color: #fffdf7;
@@ -207,4 +207,22 @@ footer {
 .social-links i:hover {
     box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, .3);
     border: dashed 2px #084194;
+}
+
+/* Sweetalert2 styles */
+/* !important is used to override the default Sweetalert2 settings */
+.swal-button {
+    font-family: "Playpen Sans", cursive !important;
+    background-color: #fffdf7 !important;
+    padding: 5px 10px !important;
+    margin: 0 1rem !important;
+    transition: all .5s ease !important;
+    color: #084194 !important;
+    border: solid 3px #084194 !important;
+    font-size: 1rem !important;
+    letter-spacing: 1px !important;
+    outline: none !important;
+    box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2) !important;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
+
 }
