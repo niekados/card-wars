@@ -127,4 +127,6 @@ To deploy your project to GitHub Pages:
 - [Balsamiq](https://balsamiq.com/) - low-fidelity wireframing tool.
 - [RedKetchup Favicon Generator](https://redketchup.io/favicon-generator) - to generate Favicon from an emoji.
 - [Google Fonts](https://fonts.google.com/) - used to add fonts to the logo, navigation links and main content.
+- [Font Awesome](https://fontawesome.com/) - a font and icon toolkit based on CSS and Less. Used to add icons to the project.
+- [Sweet Alert 2](https://sweetalert2.github.io/) - a beautiful, responsive, customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes. Used to style Java Script alert and make it look like popup modal.
 - [Colour Contrast Checker](https://colourcontrast.cc/) - colour contrast checker for the background and fonts.
