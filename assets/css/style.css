@@ -63,6 +63,41 @@ main {
 
 }
 
+/* Game area */
+#computer-game-area,
+#player-game-area {
+    display: flex;
+    justify-content: center;
+}
+
+/* Cards */
+.cards {
+    color: #084194;
+    font-family: "Swanky and Moo Moo", cursive;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 180px;
+    border: #084194 5px solid;
+    margin: 15px;
+    /* Border and shadows. Credits to Tiffany Rayside for creating "Imperfect Buttons" */
+    box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.cards-back {
+    color: #fffdf7;
+    background-color: #084194;
+    outline-offset: -13px;
+    outline: 8px solid #fffdf7;
+}
+
+.cards-front {
+    background-color: #fffdf7;
+}
+
 /* Footer */
 footer {
     display: flex;
