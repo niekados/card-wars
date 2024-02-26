@@ -251,3 +251,8 @@ footer {
     padding-bottom: 1ch;
     text-align: justify;
  }
+
+ /* Sweetalert2 icon */
+ .swal-icon {
+    border: none;
+ }

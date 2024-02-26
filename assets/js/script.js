@@ -74,7 +74,7 @@ document.addEventListener('keyup', function (event) {
 })
 
 /**
- * Calls a popup window with game rules using SweetAlert2
+ * Calls a popup window with game rules using sweetalert2
  */
 function gameRules() {
     swal.fire({
@@ -308,7 +308,7 @@ function checkWinner() {
 
     // If the computer's deck is empty, the player wins
     if (computerDeck.length === 0) {
-        // Display a sweetalert with the message 'Player Wins!'
+        // Display a sweetalert2 with the message 'Player Wins!'
         swal.fire({
             iconHtml: '<i class="fa-solid fa-crown"></i>',
             html: `
@@ -331,7 +331,7 @@ function checkWinner() {
     }
     // If the player's deck is empty, the computer wins
     else if (playerDeck.length === 0) {
-        // Display a sweetalert with the message 'Computer Wins!'
+        // Display a sweetalert2 with the message 'Computer Wins!'
         swal.fire({
             iconHtml: '<i class="fa-solid fa-crown"></i>',
             html: `
