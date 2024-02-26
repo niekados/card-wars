@@ -130,3 +130,7 @@ To deploy your project to GitHub Pages:
 - [Font Awesome](https://fontawesome.com/) - a font and icon toolkit based on CSS and Less. Used to add icons to the project.
 - [Sweet Alert 2](https://sweetalert2.github.io/) - a beautiful, responsive, customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes. Used to style Java Script alert and make it look like popup modal.
 - [Colour Contrast Checker](https://colourcontrast.cc/) - colour contrast checker for the background and fonts.
+
+## Credits
+- [CSS Background Patterns](https://www.magicpattern.design/tools/css-backgrounds) are used to add a 'exercise book page' style to the background of the main element. These patterns were created by [Jim Raptis](https://twitter.com/d__raptis).
+- [Imperfect Buttons](https://codepen.io/tmrDevelops/pen/VeRvKX) are a set of button styles designed to add a hand-drawn aesthetic to buttons and card borders. This collection was created by [Tiffany Rayside](https://twitter.com/tmrDevelops).

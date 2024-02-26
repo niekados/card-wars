@@ -50,6 +50,19 @@ header {
     padding-bottom: 5px;
 }
 
+/* Main */
+main {
+    font-family: "Playpen Sans", cursive;
+    /* Enlarge main element to push footer down */
+    flex: 1 0 auto;
+    border-bottom: #084194 solid 2px;
+    background: #fffdf7;
+    /* CSS Background Patterns - credits to Jim Raptis. Pattern was available on https://www.magicpattern.design/tools/css-backgrounds */
+    background-image: linear-gradient(#084194 1px, transparent 1px), linear-gradient(to right, #084194 1px, #fffdf7 1px);
+    background-size: 20px 20px;
+
+}
+
 /* Footer */
 footer {
     display: flex;
