@@ -1,3 +1,10 @@
+// Run this on DOM load: initiate game rules, start the game, and hide all cards
+document.addEventListener("DOMContentLoaded", function () {
+    gameRules();
+    startGame();
+    hideAllCards();
+});
+
 // DOM elements used to display various game information and actions
 let movesCounter = document.getElementById('moves-counter'); // Keeps track of the number of moves made
 let displayComputerCard = document.getElementById('computer-card-front'); // Displays the computer's card
@@ -189,7 +196,7 @@ function resetGame() {
     displayPlayerCard.classList.remove('hidden');
     displayComputerCard.classList.remove('hidden');
     movesCounter.textContent = 0;
-    hiddeAllCards()
+    hideAllCards()
 }
 
 /**
@@ -222,7 +229,7 @@ function playGame() {
     // Compare the cards and resolve the round
     compareCards(playerMove, computerMove);
 
-    hiddeAllCards();
+    hideAllCards();
     hideEmptyDeck();
 }
 
@@ -400,7 +407,7 @@ function displayCards(card) {
  * Hides or displays all cards based on the state of the game.
  * Cards are hidden before the game starts or after a restart, and are displayed once the game play starts.
  */
-function hiddeAllCards() {
+function hideAllCards() {
     // Get the computer and player game areas from the DOM
     let computerGameArea = document.getElementById('computer-game-area');
     let playerGameArea = document.getElementById('player-game-area');
