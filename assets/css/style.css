@@ -50,6 +50,23 @@ header {
     padding-bottom: 5px;
 }
 
+/* Move info - display feedback to player on each move */
+#move-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #084194;
+    border-bottom: #084194 2px solid;
+    height: 39px;
+}
+
+#move-info  {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fffdf7;
+    border-radius: 15px;
+}
+
 /* Main */
 main {
     font-family: "Playpen Sans", cursive;
