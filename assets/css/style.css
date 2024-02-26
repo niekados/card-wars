@@ -234,3 +234,20 @@ footer {
     background-color: #fffdf7 !important;
     background-image: none !important; 
  }
+
+ /* Sweetalert2 popup */
+ .swal-popup {
+    font-size: 1rem;
+    font-family: "Playpen Sans", cursive;
+    background-color: #fffdf7;
+    color: #084194;
+    background-color: #fffdf7;
+    border:solid 6px #084194 !important;
+    box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2) !important;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
+ }
+
+ .swal-popup p {
+    padding-bottom: 1ch;
+    text-align: justify;
+ }
