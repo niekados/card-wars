@@ -105,7 +105,7 @@ function gameRules() {
 function randomizeDeck() {
     const deck = new Set();
 
-    // Randomize small deck
+    // Randomize small deck (values between 10 and 14)
     if (deckSize == "small") {
         while (deck.size < 5) {
             const randomValue = Math.floor(Math.random() * 5) + 10;
@@ -113,7 +113,7 @@ function randomizeDeck() {
         }
     }
 
-    // Randomize large deck
+    // Randomize large deck (values between 2 and 14)
     if (deckSize == 'full') {
         while (deck.size < 13) {
             const randomValue = Math.floor(Math.random() * 13) + 2;
@@ -138,4 +138,20 @@ function assignCardColours() {
       playerDeck = redCards;
       computerDeck = blackCards;
     }
+  }
+
+/** 
+ * Randomizes the cards in deck assigned to red or black suits.
+*/
+function assignCards(player) {
+    let cardDeck = []
+  
+    while (player[0][1].length > 0 || player[1][1].length > 0) {
+      let i = Math.floor(Math.random() * 2);
+      if (player[i][1].length > 0) {
+        let card = player[i][1].pop();
+        cardDeck.push([player[i][0], card]);
+      }
+    }
+    return cardDeck
   }
