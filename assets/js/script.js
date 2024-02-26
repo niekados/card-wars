@@ -97,3 +97,28 @@ function gameRules() {
         }
     })
 }
+
+/**
+ * Randomizes the suits of a deck of cards based on the specified deck size. 
+ * This function randomizes each suit separately.
+ */
+function randomizeDeck() {
+    const deck = new Set();
+
+    // Randomize small deck
+    if (deckSize == "small") {
+        while (deck.size < 5) {
+            const randomValue = Math.floor(Math.random() * 5) + 10;
+            deck.add(randomValue);
+        }
+    }
+
+    // Randomize large deck
+    if (deckSize == 'full') {
+        while (deck.size < 13) {
+            const randomValue = Math.floor(Math.random() * 13) + 2;
+            deck.add(randomValue);
+        }
+    }
+    return Array.from(deck);
+}
