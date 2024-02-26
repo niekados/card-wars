@@ -1,17 +1,17 @@
-// List of DOM elements
-let movesCounter = document.getElementById('moves-counter');
-let displayComputerCard = document.getElementById('computer-card-front');
-let displayPlayerCard = document.getElementById('player-card-front');
-let displayMoveInfo = document.getElementById('move-info');
-let computerCardBack = document.getElementById('computer-card-back');
-let playerCardBack = document.getElementById('player-card-back');
-let playButton = document.getElementById('play-button');
+// DOM elements used to display various game information and actions
+let movesCounter = document.getElementById('moves-counter'); // Keeps track of the number of moves made
+let displayComputerCard = document.getElementById('computer-card-front'); // Displays the computer's card
+let displayPlayerCard = document.getElementById('player-card-front'); // Displays the player's card
+let displayMoveInfo = document.getElementById('move-info'); // Displays information about the current move
+let computerCardBack = document.getElementById('computer-card-back'); // Gets the back of the computer's card
+let playerCardBack = document.getElementById('player-card-back'); // Gets the back of the player's card
+let playButton = document.getElementById('play-button'); // Button used to play a move
 
-// Game variables
-let deckSize = 'small';
-let playerDeck;
-let computerDeck;
-let warDeck = [];
+// Game variables used to store game state and data
+let deckSize = 'small'; // Represents the size of the deck (small or large)
+let playerDeck; // Player's deck of cards
+let computerDeck; // Computer's deck of cards
+let warDeck = []; // Deck of cards used in a War
 
 // Get all buttons and add eventlisteners
 const buttons = document.querySelectorAll('button')
@@ -128,33 +128,41 @@ function randomizeDeck() {
  * Randomly assigns colors to the player and computer.
  */
 function assignCardColours() {
-    let blackCards = [["spades", randomizeDeck()], ["clubs", randomizeDeck()]];
-    let redCards = [["hearts", randomizeDeck()], ["diamonds", randomizeDeck()]];
+    let blackCards = [
+        ["spades", randomizeDeck()],
+        ["clubs", randomizeDeck()]
+    ];
+    let redCards = [
+        ["hearts", randomizeDeck()],
+        ["diamonds", randomizeDeck()]
+    ];
     let i = Math.floor(Math.random() * 2);
     if (i) {
-      playerDeck = blackCards;
-      computerDeck = redCards;
+        playerDeck = blackCards;
+        computerDeck = redCards;
     } else {
-      playerDeck = redCards;
-      computerDeck = blackCards;
+        playerDeck = redCards;
+        computerDeck = blackCards;
     }
-  }
+}
 
-/** 
- * Randomizes the cards in deck assigned to red or black suits.
-*/
+/**
+ * Randomizes the cards in the deck assigned to either red or black suits.
+ * @param {Array} player The player's deck of cards containing suits and values.
+ * @returns {Array} A new deck of cards with shuffled suits and values.
+ */
 function assignCards(player) {
     let cardDeck = []
-  
+
     while (player[0][1].length > 0 || player[1][1].length > 0) {
-      let i = Math.floor(Math.random() * 2);
-      if (player[i][1].length > 0) {
-        let card = player[i][1].pop();
-        cardDeck.push([player[i][0], card]);
-      }
+        let i = Math.floor(Math.random() * 2);
+        if (player[i][1].length > 0) {
+            let card = player[i][1].pop();
+            cardDeck.push([player[i][0], card]);
+        }
     }
     return cardDeck
-  }
+}
 
 /**
  * Starts the game by assigning card decks to the computer and player.
@@ -162,13 +170,13 @@ function assignCards(player) {
 function startGame() {
     assignCardColours();
     playerDeck = assignCards(playerDeck);
-    computerDeck = assignCards(computerDeck);  
-  }
+    computerDeck = assignCards(computerDeck);
+}
 
 /**
  * Resets the game by clearing all card decks and restarting the game state.
  */
-  function resetGame() {
+function resetGame() {
     playerDeck = null;
     computerDeck = null;
     warDeck = [];
@@ -182,40 +190,103 @@ function startGame() {
     displayComputerCard.classList.remove('hidden');
     movesCounter.textContent = 0;
     hiddeAllCards()
-  }
+}
 
-  /**
+/**
  * Initiates card moves for both the computer and player.
  */
 function playGame() {
     // Get the next card from the player's deck
     let playerMove = playerDeck.shift();
-    
+
     // Display the player's card and update the card back count
-    displayPlayerCard.innerHTML = displayCards(playerMove); 
+    displayPlayerCard.innerHTML = displayCards(playerMove);
     playerCardBack.textContent = playerDeck.length;
-  
+
     // Toggle the color of the player's card based on the suit
     displayPlayerCard.classList.toggle('red', playerMove[0] === 'hearts' || playerMove[0] === 'diamonds');
-    
+
     // Get the next card from the computer's deck
     let computerMove = computerDeck.shift();
-  
+
     // Display the computer's card and update the card back count
     displayComputerCard.textContent = displayCards(computerMove);
     computerCardBack.textContent = computerDeck.length;
-  
+
     // Toggle the color of the computer's card based on the suit
     displayComputerCard.classList.toggle('red', computerMove[0] === 'hearts' || computerMove[0] === 'diamonds');
-  
+
     // Increment the moves counter
     movesCounter.textContent = parseInt(movesCounter.textContent) + 1;
-    
+
     // Compare the cards and resolve the round
     compareCards(playerMove, computerMove);
-    
+
     hiddeAllCards();
     hideEmptyDeck();
-  }
+}
 
+/**
+ * Compares the cards of the player and computer to determine the outcome of a battle or war.
+ * @param {Array} playerMove The card the player played.
+ * @param {Array} computerMove The card the computer played.
+ */
+function compareCards(playerMove, computerMove) {
+    // Check if there's already a winner
+    checkWinner();
   
+    // If there's no cards in the war deck
+    if (warDeck.length === 0) {
+      // If the player's card is higher
+      if (playerMove[1] > computerMove[1]) {
+        // Player wins the battle, add the cards to the player's deck
+        playerDeck.push(playerMove, computerMove);
+        displayMoveInfo.textContent = 'Player wins Battle';
+        return;
+      }
+      // If the computer's card is higher
+      else if (playerMove[1] < computerMove[1]) {
+        // Computer wins the battle, add the cards to the computer's deck
+        computerDeck.push(playerMove, computerMove);
+        displayMoveInfo.textContent = 'Computer wins Battle';
+        return;
+      }
+      // If there's a tie
+      else {
+        // Put both cards in the war deck
+        warDeck.push(playerMove);
+        warDeck.push(computerMove);
+        displayMoveInfo.textContent = 'Card War!';
+        return;
+      }
+    }
+    // If there are cards in the war deck
+    else {
+      // If the player's card is higher
+      if (playerMove[1] > computerMove[1]) {
+        // Player wins the war, add all cards in the war deck to the player's deck
+        playerDeck.push(playerMove, computerMove);
+        playerDeck = playerDeck.concat(warDeck);
+        warDeck = [];
+        displayMoveInfo.textContent = 'Player wins War';
+        return;
+      }
+      // If the computer's card is higher
+      else if (playerMove[1] < computerMove[1]) {
+        // Computer wins the war, add all cards in the war deck to the computer's deck
+        computerDeck.push(playerMove, computerMove);
+        computerDeck = computerDeck.concat(warDeck);
+        warDeck = [];
+        displayMoveInfo.textContent = 'Computer wins War';
+        return;
+      }
+      // If there's a tie again
+      else {
+        // Put both cards in the war deck
+        warDeck.push(playerMove);
+        warDeck.push(computerMove);
+        displayMoveInfo.textContent = 'Another War!';
+        return;
+      }
+    }
+  }
