@@ -346,3 +346,52 @@ function checkWinner() {
         return;
     }
 }
+
+/**
+ * Converts a card from an array to a string representation.
+ * @param {Array} card An array representing a card, where card[0] is the suit and card[1] is the value.
+ * @returns {String} A string representation of the card.
+ */
+function displayCards(card) {
+    let suits;
+    let values;
+
+    // Convert the suit to a symbol representation
+    switch (card[0]) {
+        case 'hearts':
+            suits = '♥';
+            break;
+        case 'diamonds':
+            suits = '♦';
+            break;
+        case 'clubs':
+            suits = '♣';
+            break;
+        case 'spades':
+            suits = '♠';
+            break;
+        default:
+            suits = card[0];
+    }
+
+    // Convert the value to a symbol or string representation
+    switch (card[1]) {
+        case 14:
+            values = 'A';
+            break;
+        case 13:
+            values = 'K';
+            break;
+        case 12:
+            values = 'Q';
+            break;
+        case 11:
+            values = 'J';
+            break;
+        default:
+            values = card[1];
+    }
+
+    // Return the card in the format of 'suit value'
+    return `${suits} ${values}`;
+}
