@@ -404,8 +404,18 @@ function hiddeAllCards() {
     // Get the computer and player game areas from the DOM
     let computerGameArea = document.getElementById('computer-game-area');
     let playerGameArea = document.getElementById('player-game-area');
-  
+
     // Toggle the hidden class for the computer and player game areas based on the presence of cards
     computerGameArea.classList.toggle('hidden', !displayComputerCard.innerHTML);
     playerGameArea.classList.toggle('hidden', !displayComputerCard.innerHTML);
-  }
+}
+
+/**
+ * Hides or displays the back of cards if the deck is empty.
+ */
+function hideEmptyDeck() {
+    // Toggle the hidden class for the computer card back based on the length of the computer's deck
+    computerCardBack.parentElement.classList.toggle('hidden', computerDeck.length === 0);
+    // Toggle the hidden class for the player card back based on the length of the player's deck
+    playerCardBack.parentElement.classList.toggle('hidden', playerDeck.length === 0);
+}
