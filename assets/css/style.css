@@ -153,10 +153,12 @@ main {
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
-.button:hover {
-    /* Border and shadows. Credits to Tiffany Rayside for creating "Imperfect Buttons" */
-    box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, .3);
-    border: dashed 3px #084194;
+@media (hover: hover) {
+    .button:hover {
+        /* Border and shadows. Credits to Tiffany Rayside for creating "Imperfect Buttons" */
+        box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, .3);
+        border: dashed 3px #084194;
+    }
 }
 
 /* Play button */
@@ -165,8 +167,10 @@ main {
     border: solid 4px #084194;
 }
 
-#play-button:hover {
-    border: dashed 4px #084194;
+@media (hover: hover) {
+    #play-button:hover {
+        border: dashed 4px #084194;
+    }
 }
 
 /* Utility - hide HTML elements */
@@ -204,9 +208,11 @@ footer {
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
-.social-links i:hover {
-    box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, .3);
-    border: dashed 2px #084194;
+@media (hover: hover) {
+    .social-links i:hover {
+        box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, .3);
+        border: dashed 2px #084194;
+    }
 }
 
 /* Sweetalert2 styles */
@@ -228,31 +234,33 @@ footer {
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
 }
 
-.swal-button:hover{
-    box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3) !important;
-    border: dashed 3px #084194 !important;
-    background-color: #fffdf7 !important;
-    background-image: none !important; 
- }
+@media (hover: hover) {
+    .swal-button:hover {
+        box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, .3) !important;
+        border: dashed 3px #084194 !important;
+        background-color: #fffdf7 !important;
+        background-image: none !important;
+    }
+}
 
- /* Sweetalert2 popup */
- .swal-popup {
+/* Sweetalert2 popup */
+.swal-popup {
     font-size: 1rem;
     font-family: "Playpen Sans", cursive;
     background-color: #fffdf7;
     color: #084194;
     background-color: #fffdf7;
-    border:solid 6px #084194 !important;
-    box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2) !important;
+    border: solid 6px #084194 !important;
+    box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2) !important;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
- }
+}
 
- .swal-popup p {
+.swal-popup p {
     padding-bottom: 1ch;
     text-align: justify;
- }
+}
 
- /* Sweetalert2 icon */
- .swal-icon {
+/* Sweetalert2 icon */
+.swal-icon {
     border: none;
- }
+}
