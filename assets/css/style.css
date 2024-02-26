@@ -37,3 +37,15 @@ header {
     text-decoration: none;
     color: #084194;
 }
+
+/* Score area & moves counter */
+#score-area {
+    color: #084194;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background-color: #fffdf7;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: #084194 solid 1px;
+    padding-bottom: 5px;
+}
