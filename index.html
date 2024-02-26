@@ -22,14 +22,17 @@
 </head>
 
 <body>
+
     <!-- Header -->
     <header>
+
         <!-- Logo -->
         <div id="logo">
             <a href="index.html">
                 <h1>Card Wars</h1>
             </a>
         </div>
+
         <!-- Game control buttons -->
         <div id="controls">
             <button class="button" data-type="small-deck"><i class="fa-solid fa-layer-group"></i> Small</button>
@@ -41,6 +44,36 @@
     <!-- Main -->
     <main>
 
+        <!-- Score area & moves counter -->
+        <div class="score-area">
+            <p>Player: <span id="player-score">0</span></p>
+            <p>Moves: <span id="moves-counter">0</span> </p>
+            <p>Computer: <span id="computer-score">0</span></p>
+        </div>
+
+        <!-- Game info - display feedback to player on each move -->
+        <div id="game-info"><span id="move-info"> </span></div>
+
+        <!-- Game Area -->
+        <div id="game-area">
+
+            <!-- Computer cards & deck -->
+            <div id="computer-game-area">
+                <div class="cards cards-back"><span id="computer-card-back"></span></div>
+                <div class="cards cards-front"><span id="computer-card-front"></span></div>
+            </div>
+
+            <!-- Player cards & deck -->
+            <div id="player-game-area">
+                <div class="cards cards-back"><span id="player-card-back"></span></div>
+                <div class="cards cards-front"><span id="player-card-front"></span></div>
+            </div>
+
+            <!-- Game control - "Play" button -->
+            <div id="game-control">
+                <button class="button" id="play-button" data-type="play"><i class="fa-solid fa-play"></i> Play</button>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
