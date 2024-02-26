@@ -395,3 +395,17 @@ function displayCards(card) {
     // Return the card in the format of 'suit value'
     return `${suits} ${values}`;
 }
+
+/**
+ * Hides or displays all cards based on the state of the game.
+ * Cards are hidden before the game starts or after a restart, and are displayed once the game play starts.
+ */
+function hiddeAllCards() {
+    // Get the computer and player game areas from the DOM
+    let computerGameArea = document.getElementById('computer-game-area');
+    let playerGameArea = document.getElementById('player-game-area');
+  
+    // Toggle the hidden class for the computer and player game areas based on the presence of cards
+    computerGameArea.classList.toggle('hidden', !displayComputerCard.innerHTML);
+    playerGameArea.classList.toggle('hidden', !displayComputerCard.innerHTML);
+  }
