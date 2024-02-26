@@ -108,4 +108,13 @@ In the "Card Wars" game, the header and footer sections will transform to ensure
  - **#084194** - This deep blue is reminiscent of the ink used in traditional pen and paper games. It has a strong contrast ratio of 9.41 with the paper's white background, ensuring great readability.
  - **#c73f4c** - Like a splash of red ink from a fountain pen, this subdued red adds just the right amount of contrast and visual interest. It's exclusively reserved for the red card suits and offers a contrast ratio of 4.86 with the paper white background.
 
- 
+## Deployment
+This project was saved and stored on [GitHub](https://github.com/). GitHub has "git" version control and deployment through the GitHub Pages option.
+To deploy your project to GitHub Pages:
+- Go to your GitHub repository.
+- Click on the "Settings" tab.
+- Scroll down to the "Pages" section.
+- Under the “Build and deployment” source drop-down menu select “Deploy from a branch”.
+- Under the “Branch” drop-down menu, select “main” branch.
+- Click "Save." (It may take a few minutes for the GitHub Pages to deploy).
+- GitHub Pages will provide you with a link to your deployed website. The Deployed website address pattern is usually: "https://yourusername.github.io/your-repository/".
