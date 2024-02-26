@@ -234,59 +234,115 @@ function playGame() {
 function compareCards(playerMove, computerMove) {
     // Check if there's already a winner
     checkWinner();
-  
+
     // If there's no cards in the war deck
     if (warDeck.length === 0) {
-      // If the player's card is higher
-      if (playerMove[1] > computerMove[1]) {
-        // Player wins the battle, add the cards to the player's deck
-        playerDeck.push(playerMove, computerMove);
-        displayMoveInfo.textContent = 'Player wins Battle';
-        return;
-      }
-      // If the computer's card is higher
-      else if (playerMove[1] < computerMove[1]) {
-        // Computer wins the battle, add the cards to the computer's deck
-        computerDeck.push(playerMove, computerMove);
-        displayMoveInfo.textContent = 'Computer wins Battle';
-        return;
-      }
-      // If there's a tie
-      else {
-        // Put both cards in the war deck
-        warDeck.push(playerMove);
-        warDeck.push(computerMove);
-        displayMoveInfo.textContent = 'Card War!';
-        return;
-      }
+        // If the player's card is higher
+        if (playerMove[1] > computerMove[1]) {
+            // Player wins the battle, add the cards to the player's deck
+            playerDeck.push(playerMove, computerMove);
+            displayMoveInfo.textContent = 'Player wins Battle';
+            return;
+        }
+        // If the computer's card is higher
+        else if (playerMove[1] < computerMove[1]) {
+            // Computer wins the battle, add the cards to the computer's deck
+            computerDeck.push(playerMove, computerMove);
+            displayMoveInfo.textContent = 'Computer wins Battle';
+            return;
+        }
+        // If there's a tie
+        else {
+            // Put both cards in the war deck
+            warDeck.push(playerMove);
+            warDeck.push(computerMove);
+            displayMoveInfo.textContent = 'Card War!';
+            return;
+        }
     }
     // If there are cards in the war deck
     else {
-      // If the player's card is higher
-      if (playerMove[1] > computerMove[1]) {
-        // Player wins the war, add all cards in the war deck to the player's deck
-        playerDeck.push(playerMove, computerMove);
-        playerDeck = playerDeck.concat(warDeck);
-        warDeck = [];
-        displayMoveInfo.textContent = 'Player wins War';
-        return;
-      }
-      // If the computer's card is higher
-      else if (playerMove[1] < computerMove[1]) {
-        // Computer wins the war, add all cards in the war deck to the computer's deck
-        computerDeck.push(playerMove, computerMove);
-        computerDeck = computerDeck.concat(warDeck);
-        warDeck = [];
-        displayMoveInfo.textContent = 'Computer wins War';
-        return;
-      }
-      // If there's a tie again
-      else {
-        // Put both cards in the war deck
-        warDeck.push(playerMove);
-        warDeck.push(computerMove);
-        displayMoveInfo.textContent = 'Another War!';
-        return;
-      }
+        // If the player's card is higher
+        if (playerMove[1] > computerMove[1]) {
+            // Player wins the war, add all cards in the war deck to the player's deck
+            playerDeck.push(playerMove, computerMove);
+            playerDeck = playerDeck.concat(warDeck);
+            warDeck = [];
+            displayMoveInfo.textContent = 'Player wins War';
+            return;
+        }
+        // If the computer's card is higher
+        else if (playerMove[1] < computerMove[1]) {
+            // Computer wins the war, add all cards in the war deck to the computer's deck
+            computerDeck.push(playerMove, computerMove);
+            computerDeck = computerDeck.concat(warDeck);
+            warDeck = [];
+            displayMoveInfo.textContent = 'Computer wins War';
+            return;
+        }
+        // If there's a tie again
+        else {
+            // Put both cards in the war deck
+            warDeck.push(playerMove);
+            warDeck.push(computerMove);
+            displayMoveInfo.textContent = 'Another War!';
+            return;
+        }
     }
-  }
+}
+
+/**
+ * Checks if there is a winner based on the computer or player's deck length.
+ */
+function checkWinner() {
+    // Get the player's and computer's score elements from the DOM
+    let playerScore = document.getElementById('player-score');
+    let computerScore = document.getElementById('computer-score');
+
+    // If the computer's deck is empty, the player wins
+    if (computerDeck.length === 0) {
+        // Display a sweetalert with the message 'Player Wins!'
+        swal.fire({
+            iconHtml: '<i class="fa-solid fa-crown"></i>',
+            html: `
+        <p><strong>Player Wins!</strong></p>`,
+            showCloseButton: true,
+            allowEnterKey: true,
+            allowEscapeKey: true,
+            customClass: {
+                popup: 'swal-popup',
+                closeButton: 'swal-button',
+                icon: 'swal-icon',
+                confirmButton: 'swal-button',
+            }
+        });
+        // Hide the play button
+        playButton.classList.add('hidden');
+        // Increase the player's score by 1
+        playerScore.textContent = parseInt(playerScore.textContent) + 1;
+        return;
+    }
+    // If the player's deck is empty, the computer wins
+    else if (playerDeck.length === 0) {
+        // Display a sweetalert with the message 'Computer Wins!'
+        swal.fire({
+            iconHtml: '<i class="fa-solid fa-crown"></i>',
+            html: `
+        <p><strong>Computer Wins!</strong></p>`,
+            showCloseButton: true,
+            allowEnterKey: true,
+            allowEscapeKey: true,
+            customClass: {
+                popup: 'swal-popup',
+                closeButton: 'swal-button',
+                icon: 'swal-icon',
+                confirmButton: 'swal-button',
+            }
+        });
+        // Hide the play button
+        playButton.classList.add('hidden');
+        // Increase the computer's score by 1
+        computerScore.textContent = parseInt(computerScore.textContent) + 1;
+        return;
+    }
+}
