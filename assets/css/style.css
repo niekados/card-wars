@@ -1,2 +1,39 @@
 /* Import google fonts - "Playpen Sans" & "Swanky and Moo Moo */
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Swanky+and+Moo+Moo&display=swap');
+
+/* Reset browser default styles */
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing property to include border and padding in the total height and width of an elements */
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: "Playpen Sans", cursive;
+    font-weight: 400;
+}
+
+/* Header */
+header {
+    background-color: #fffdf7;
+    display: flex;
+    border-bottom: #084194 2px solid;
+    justify-content: space-between;
+}
+
+/* Logo */
+#logo {
+    display: block;
+    padding-left: 15px;
+}
+
+#logo a {
+    font-family: "Swanky and Moo Moo", cursive;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #084194;
+}
