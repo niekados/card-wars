@@ -100,4 +100,12 @@ In the "Card Wars" game, the header and footer sections will transform to ensure
 
 ### Colours
 
+ ![Colours](assets/wireframes/colors.webp)
+
+ This project has been designed to replicate the essence of a hand-drawn, nostalgic card game experience. Colours were selected to reflect this and to evoke the feeling of playing with cards in your exercise book.
+
+ - **#fffdf7** - A faint whisper of cream, with a predominance of pure white. The hue of a well-loved exercise book was chosen to represent the body of the page background and the cards.
+ - **#084194** - This deep blue is reminiscent of the ink used in traditional pen and paper games. It has a strong contrast ratio of 9.41 with the paper's white background, ensuring great readability.
+ - **#c73f4c** - Like a splash of red ink from a fountain pen, this subdued red adds just the right amount of contrast and visual interest. It's exclusively reserved for the red card suits and offers a contrast ratio of 4.86 with the paper white background.
+
  
