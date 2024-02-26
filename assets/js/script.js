@@ -67,7 +67,7 @@ document.addEventListener('keyup', function (event) {
 })
 
 /**
- * Calls a popup window with game rules
+ * Calls a popup window with game rules using SweetAlert2
  */
 function gameRules() {
     swal.fire({
@@ -183,3 +183,39 @@ function startGame() {
     movesCounter.textContent = 0;
     hiddeAllCards()
   }
+
+  /**
+ * Initiates card moves for both the computer and player.
+ */
+function playGame() {
+    // Get the next card from the player's deck
+    let playerMove = playerDeck.shift();
+    
+    // Display the player's card and update the card back count
+    displayPlayerCard.innerHTML = displayCards(playerMove); 
+    playerCardBack.textContent = playerDeck.length;
+  
+    // Toggle the color of the player's card based on the suit
+    displayPlayerCard.classList.toggle('red', playerMove[0] === 'hearts' || playerMove[0] === 'diamonds');
+    
+    // Get the next card from the computer's deck
+    let computerMove = computerDeck.shift();
+  
+    // Display the computer's card and update the card back count
+    displayComputerCard.textContent = displayCards(computerMove);
+    computerCardBack.textContent = computerDeck.length;
+  
+    // Toggle the color of the computer's card based on the suit
+    displayComputerCard.classList.toggle('red', computerMove[0] === 'hearts' || computerMove[0] === 'diamonds');
+  
+    // Increment the moves counter
+    movesCounter.textContent = parseInt(movesCounter.textContent) + 1;
+    
+    // Compare the cards and resolve the round
+    compareCards(playerMove, computerMove);
+    
+    hiddeAllCards();
+    hideEmptyDeck();
+  }
+
+  
