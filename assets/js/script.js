@@ -122,3 +122,20 @@ function randomizeDeck() {
     }
     return Array.from(deck);
 }
+
+/**
+ * Assigns the suits Spades & Clubs to black cards, and Hearts & Diamonds to red cards. 
+ * Randomly assigns colors to the player and computer.
+ */
+function assignCardColours() {
+    let blackCards = [["spades", randomizeDeck()], ["clubs", randomizeDeck()]];
+    let redCards = [["hearts", randomizeDeck()], ["diamonds", randomizeDeck()]];
+    let i = Math.floor(Math.random() * 2);
+    if (i) {
+      playerDeck = blackCards;
+      computerDeck = redCards;
+    } else {
+      playerDeck = redCards;
+      computerDeck = blackCards;
+    }
+  }
