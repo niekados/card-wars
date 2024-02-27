@@ -270,26 +270,89 @@ Remove hover effect on touch devices */
     }
 }
 
+/* Devices with very small screens */
+@media screen and (max-width: 320px) {
+
+    /* Buttons */
+    .button {
+        font-size: 0.8rem;
+    }
+
+    /* Score area & moves counter */
+    #score-area {
+        font-size: 1rem;
+    }
+
+    /* Move info - display feedback to player on each move */
+    #move-info-container {
+        height: 26px;
+    }
+
+    #move-info {
+        font-size: 1rem;
+    }
+
+    /* Cards */
+    .cards {
+        width: 100px;
+        height: 160px;
+        font-size: 2.3rem;
+    }
+}
+
+
 /* Tablets and larger (768px and larger) */
 @media screen and (min-width: 768px) {
+
+    /* Header */
     header {
         flex-direction: row;
         justify-content: space-between;
     }
 
+    /* Logo */
     #logo {
         padding-left: 15px;
         margin: 0;
     }
 
+    /* Buttons */
     .button {
         margin: 0 1rem;
     }
 
+    /* Footer */
+
+    /* Social Links */
     .social-links {
         width: 20%;
     }
 }
 
-/* Laptops and larger (992px and larger) */
-@media screen and (min-width: 992px) {}
+/* Display larger cards only for tablets and laptops with a taller screen height */
+@media screen and (min-height: 800px) and (min-width: 768px) {
+    .cards {
+        width: 160px;
+        height: 240px;
+        margin: 30px;
+        font-size: 3.5rem;
+    }
+}
+
+/* Add additional margin for devices with extra tall screens */
+@media screen and (min-height: 900px) {
+    .cards {
+        margin: 10% 5% 5%;
+    }
+}
+
+/* Wide monitors and larger (1920px and larger) */
+@media screen and (min-width: 1920px) {
+
+    header,
+    main,
+    footer {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
