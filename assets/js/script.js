@@ -84,12 +84,10 @@ function gameRules() {
     <p><strong>Setup:</strong> Each player is randomly assigned a deck of either red or black cards.</p>
     <p><strong>Gameplay:</strong> Players simultaneously reveal the top card of their deck. Each round is called a 'battle'.</p>
     <p><strong>Battle:</strong> The player with the higher card value wins the battle.</p>
-    <p><strong>War:</strong></p>
-    <ul>
-    <li>If both players reveal cards of equal value, a 'war' occurs.</li>
-    <li>Players place a new card face-up.</li>
-    <li>The player with the higher face-up card wins the war, collecting all cards on the table and adding them to the bottom of their deck.</li>
-    </ul>
+    <p><strong>War:</strong> If both players reveal cards of equal value, a 'war' occurs. 
+    Players place a new card face-up. 
+    The player with the higher face-up card wins the war, 
+    collecting all cards on the table and adding them to the bottom of their deck.</p>
     <p><strong>Repeat:</strong> If the face-up cards are equal again, repeat the war process.</p>
     <p><strong>End:</strong> The game ends when one player runs out of cards. The player with all the cards wins.</p>
     </div>`,
