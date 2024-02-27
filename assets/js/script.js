@@ -237,8 +237,6 @@ function playGame() {
  * @param {Array} computerMove The card the computer played.
  */
 function compareCards(playerMove, computerMove) {
-    // Check if there's already a winner
-    checkWinner();
 
     // If there's no cards in the war deck
     if (warDeck.length === 0) {
@@ -247,6 +245,8 @@ function compareCards(playerMove, computerMove) {
             // Player wins the battle, add the cards to the player's deck
             playerDeck.push(playerMove, computerMove);
             displayMoveInfo.textContent = 'Player wins Battle';
+            // Check if there is a winner
+            checkWinner();
             return;
         }
         // If the computer's card is higher
@@ -254,6 +254,8 @@ function compareCards(playerMove, computerMove) {
             // Computer wins the battle, add the cards to the computer's deck
             computerDeck.push(playerMove, computerMove);
             displayMoveInfo.textContent = 'Computer wins Battle';
+            // Check if there is a winner
+            checkWinner();
             return;
         }
         // If there's a tie
@@ -262,6 +264,8 @@ function compareCards(playerMove, computerMove) {
             warDeck.push(playerMove);
             warDeck.push(computerMove);
             displayMoveInfo.textContent = 'Card War!';
+            // Check if there is a winner. If player runs out of cards during war phase, he looses the game.
+            checkWinner();
             return;
         }
     }
@@ -274,6 +278,8 @@ function compareCards(playerMove, computerMove) {
             playerDeck = playerDeck.concat(warDeck);
             warDeck = [];
             displayMoveInfo.textContent = 'Player wins War';
+            // Check if there is a winner
+            checkWinner();
             return;
         }
         // If the computer's card is higher
@@ -283,6 +289,8 @@ function compareCards(playerMove, computerMove) {
             computerDeck = computerDeck.concat(warDeck);
             warDeck = [];
             displayMoveInfo.textContent = 'Computer wins War';
+            // Check if there is a winner
+            checkWinner();
             return;
         }
         // If there's a tie again
@@ -291,6 +299,8 @@ function compareCards(playerMove, computerMove) {
             warDeck.push(playerMove);
             warDeck.push(computerMove);
             displayMoveInfo.textContent = 'Another War!';
+            // Check if there is a winner. If player runs out of cards during war phase, he looses the game.
+            checkWinner();
             return;
         }
     }

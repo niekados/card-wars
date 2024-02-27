@@ -66,10 +66,11 @@ The "Card Wars" game will be structured as a single-page application, with a foc
 - **Footer:** The footer will feature social links, allowing players to connect with the developer on various social media platforms. This will provide players with an opportunity to engage with the developer and stay updated on game updates and news.
 
 ### Responsive Design
-In the "Card Wars" game, the header and footer sections will transform to ensure a seamless experience on smaller screens.
+In the "Card Wars" game, the header and footer sections will transform to ensure a seamless experience on smaller screens. Also depending on screen width and height cards will scale size to fit smaller or larger screens
 
-- **Header:** On small screens, the header will be displayed in a column layout, with the logo centered at the top of the screen. The game control buttons will be positioned below the logo, with smaller buttons to fit the screen size. This layout will maintain the functionality of the header while optimizing the user experience for smaller screens.
-- **Footer:** Similarly, the footer will transform into a column layout on small screens. The social links will be displayed in a row at the top of the column, followed by the developer's name in a row at the bottom. This layout will ensure that all elements of the footer remain visible and accessible on smaller screens, enhancing the overall user experience.
+- **Header:** On smaller screens, the header will transition to a column layout, with the logo centred at the top. The control buttons will be placed below the logo, with reduced sizes to accommodate the screen size. This design preserves the header's functionality while enhancing user experience on smaller devices.
+- **Main Page Section:** Card sizes will be scaled up or down to fit the screen's width and height, ensuring optimal visibility and interaction. 
+- **Footer:** Similar to the header, the footer will shrink in size to fit smaller screens, maintaining a consistent user experience across different devices.
 
 ## Skeleton
 
@@ -128,7 +129,7 @@ To deploy your project to GitHub Pages:
 - [RedKetchup Favicon Generator](https://redketchup.io/favicon-generator) - to generate Favicon from an emoji.
 - [Google Fonts](https://fonts.google.com/) - used to add fonts to the logo, navigation links and main content.
 - [Font Awesome](https://fontawesome.com/) - a font and icon toolkit based on CSS and Less. Used to add icons to the project.
-- [Sweet Alert 2](https://sweetalert2.github.io/) - a beautiful, responsive, customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes. Used to style Java Script alert and make it look like popup modal.
+- [Sweet Alert 2](https://sweetalert2.github.io/) - a beautiful, responsive, customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes. Used to style Java Script alert and make it look like a popup modal.
 - [Colour Contrast Checker](https://colourcontrast.cc/) - colour contrast checker for the background and fonts.
 
 ## Credits
