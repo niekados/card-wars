@@ -21,18 +21,18 @@ let computerDeck; // Computer's deck of cards
 let warDeck = []; // Deck of cards used in a War
 
 // Get all buttons and add eventlisteners
-const buttons = document.querySelectorAll('button')
+const buttons = document.querySelectorAll('button');
 
 buttons.forEach(button => button.addEventListener('click', (event) => {
     let buttonType = button.getAttribute('data-type');
 
     // Removes "focus" from all buttons
-    button.blur()
+    button.blur();
 
     // Reset button
     if (buttonType === 'reset') {
-        resetGame()
-        startGame()
+        resetGame();
+        startGame();
     }
 
     // Deck Size button (small)
@@ -40,8 +40,8 @@ buttons.forEach(button => button.addEventListener('click', (event) => {
         button.setAttribute('data-type', 'large-deck');
         button.innerHTML = '<i class="fa-solid fa-layer-group"></i> 52 Cards';
         deckSize = 'full';
-        resetGame()
-        startGame()
+        resetGame();
+        startGame();
     }
 
     // Deck Size button (large)
@@ -49,20 +49,20 @@ buttons.forEach(button => button.addEventListener('click', (event) => {
         button.setAttribute('data-type', 'small-deck');
         button.innerHTML = '<i class="fa-solid fa-layer-group"></i> 20 Cards';
         deckSize = 'small';
-        resetGame()
-        startGame()
+        resetGame();
+        startGame();
     }
 
     // Game rules button
     if (buttonType === "info") {
-        gameRules()
+        gameRules();
     }
 
     // Play button
     if (buttonType === 'play') {
-        playGame()
+        playGame();
     }
-}))
+}));
 
 // Add event listeners to play game with "spacebar" or "enter" keys
 document.addEventListener('keyup', function (event) {
@@ -71,7 +71,7 @@ document.addEventListener('keyup', function (event) {
             playGame();
         }
     }
-})
+});
 
 /**
  * Calls a popup window with game rules using sweetalert2
@@ -106,7 +106,7 @@ function gameRules() {
             icon: 'swal-icon',
             confirmButton: 'swal-button',
         }
-    })
+    });
 }
 
 /**
@@ -163,7 +163,7 @@ function assignCardColours() {
  * @returns {Array} A new deck of cards with shuffled suits and values.
  */
 function assignCards(player) {
-    let cardDeck = []
+    let cardDeck = [];
 
     while (player[0][1].length > 0 || player[1][1].length > 0) {
         let i = Math.floor(Math.random() * 2);
@@ -172,7 +172,7 @@ function assignCards(player) {
             cardDeck.push([player[i][0], card]);
         }
     }
-    return cardDeck
+    return cardDeck;
 }
 
 /**
@@ -200,7 +200,7 @@ function resetGame() {
     displayPlayerCard.classList.remove('hidden');
     displayComputerCard.classList.remove('hidden');
     movesCounter.textContent = 0;
-    hideAllCards()
+    hideAllCards();
 }
 
 /**
@@ -473,7 +473,7 @@ function hideAllCards() {
 
     // Toggle the hidden class for the computer and player game areas based on the presence of cards
     computerGameArea.classList.toggle('hidden', !displayComputerCard.innerHTML);
-    playerGameArea.classList.toggle('hidden', !displayComputerCard.innerHTML);
+    playerGameArea.classList.toggle('hidden', !displayPlayerCard.innerHTML);
 }
 
 /**
