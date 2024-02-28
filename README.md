@@ -6,6 +6,24 @@ Card Wars is a simple card game that brings back memories of my childhood. It wa
 
 **Link to live page: [Card Wars](https://niekados.github.io/card-wars/index.html)**
 
+## Table Of Contents
+
+- [Game Rules](#game-rules)
+- [Strategy](#strategy)
+- [Targeted Audience](#target-audience)
+- [User Stories](#user-stories)
+- [Scope](#scope)
+- [Structure](#structure)
+- [Skeleton](#skeleton)
+- [Surface](#surface)
+    - [Fonts](#fonts)
+    - [Colours](#colours)
+- [Deployment](#deployment)
+- [Technologies Used](#technologies-used)
+- [Credits](#credits)
+- [Testing and Validation](#testing-and-validation)
+- [Future Features](#future-features)
+
 ## Game Rules
 
 **Objective:**
@@ -22,7 +40,7 @@ Card Wars is a simple card game that brings back memories of my childhood. It wa
 - The player who wins the war collects all the cards in the middle of the playing area and places them at the bottom of their deck.
 - If a player runs out of cards during a war, they lose the game. Otherwise, the game continues until one player wins all the cards.
 
-## Startegy
+## Strategy
 
 This project aims to develop a simple, browser-based card game called "Card Wars." The game is designed to be playable by both adults and children, offering a fun and educational experience. It's a single-page application that features basic game controls and clear feedback for players.
 The game will display the cards and decks, allowing players to make moves and receive instant feedback. Additionally, there will be a simple progress indicator to keep track of the game's progression.
