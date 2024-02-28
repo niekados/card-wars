@@ -93,7 +93,7 @@ function gameRules() {
         <p>9. <strong>War:</strong> If both players reveal cards of equal value, a 'war' occurs. 
         Players place two cards face-down and draw a new card face-up. 
         The player with the higher face-up card wins the war, 
-        collecting all cards on the table and adding them to the bottom of their deck.</p>
+        collecting all the cards on the table and adding them to the bottom of their deck.</p>
         <p>10. <strong>Repeat:</strong> If the face-up cards are equal again, repeat the war process.</p>
         <p>11. <strong>End:</strong> The game ends when one player runs out of cards. The player with all the cards wins.</p>
     </div>`,
