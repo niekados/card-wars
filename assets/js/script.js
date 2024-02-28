@@ -81,15 +81,21 @@ function gameRules() {
         iconHtml: '<i class="fa-regular fa-circle-question"></i>',
         html: `
     <div>
-    <p><strong>Setup:</strong> Each player is randomly assigned a deck of either red or black cards.</p>
-    <p><strong>Gameplay:</strong> Players simultaneously reveal the top card of their deck. Each round is called a 'battle'.</p>
-    <p><strong>Battle:</strong> The player with the higher card value wins the battle.</p>
-    <p><strong>War:</strong> If both players reveal cards of equal value, a 'war' occurs. 
-    Players place a new card face-up. 
-    The player with the higher face-up card wins the war, 
-    collecting all cards on the table and adding them to the bottom of their deck.</p>
-    <p><strong>Repeat:</strong> If the face-up cards are equal again, repeat the war process.</p>
-    <p><strong>End:</strong> The game ends when one player runs out of cards. The player with all the cards wins.</p>
+        <h2>How to Play:</h2>
+        <p>1. Start the game by clicking the <strong><i class="fa-solid fa-play"></i> Play</strong> button, which also draws a card on each turn.</p>
+        <p>2. Use the <strong><i class="fa-solid fa-layer-group"></i> 20 Cards / 52 Cards</strong> button to toggle between deck sizes of 20 or 52 cards.</p>
+        <p>3. Press the <strong><i class="fa-solid fa-arrows-rotate"></i> Reset</strong> button to reset the game after each round or to start a new game.</p>
+        <p>4. Click the <strong><i class="fa-regular fa-circle-question"></i> Rules</strong> button to view the game rules.</p>
+        <p>5. The <strong>Game area</strong> displays computer cards on the top row and player cards on the bottom row.</p>
+        <p>6. <strong>Setup:</strong> Players are randomly assigned a deck of either red or black cards.</p>
+        <p>7. <strong>Gameplay:</strong> Players simultaneously reveal the top card of their deck in each round, called a 'battle'.</p>
+        <p>8. <strong>Battle:</strong> The player with the higher card value wins the battle.</p>
+        <p>9. <strong>War:</strong> If both players reveal cards of equal value, a 'war' occurs. 
+        Players place two cards face-down and draw a new card face-up. 
+        The player with the higher face-up card wins the war, 
+        collecting all cards on the table and adding them to the bottom of their deck.</p>
+        <p>10. <strong>Repeat:</strong> If the face-up cards are equal again, repeat the war process.</p>
+        <p>11. <strong>End:</strong> The game ends when one player runs out of cards. The player with all the cards wins.</p>
     </div>`,
         showCloseButton: true,
         allowEnterKey: true,
@@ -387,7 +393,7 @@ function checkWinner() {
         // Increase the computer's score by 1
         computerScore.textContent = parseInt(computerScore.textContent) + 1;
         return;
-    }  
+    }
 }
 
 /**
