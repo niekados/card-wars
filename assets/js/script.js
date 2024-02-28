@@ -234,6 +234,12 @@ function playGame() {
     // Compare the cards and resolve the round
     compareCards(playerMove, computerMove);
 
+    // Prevent an infinite game loop - randomize decks every tenth move
+    if (parseInt(movesCounter.textContent) % 10 === 0) {
+        computerDeck = computerDeck.sort(() => Math.random() - 0.5);
+        playerDeck = playerDeck.sort(() => Math.random() - 0.5);
+    }
+
     hideAllCards();
     hideEmptyDeck();
 }
@@ -265,23 +271,22 @@ function compareCards(playerMove, computerMove) {
             checkWinner();
             return;
         }
-        // If there's a tie, card war starts. Placing two cards face down.
+        // If there's a tie, card war starts. Placing two cards face-down.
         else {
             // Put both cards in the war deck
             warDeck.push(playerMove);
             warDeck.push(computerMove);
             displayMoveInfo.textContent = 'Card War!';
+
+            // Put two cards (face-down) of each player to the war deck
+            playerDeck.splice(0, 2).forEach((card) => {
+                warDeck.push(card);
+            });
+            computerDeck.splice(0, 2).forEach((card) => {
+                warDeck.push(card);
+            });
             // Check if there is a winner. If the player runs out of cards during the war phase, they lose the game.
             checkWinner();
-            warDeck.push(playerDeck.shift());
-            warDeck.push(computerDeck.shift());
-            // Check winner after placing each card in the war deck. If the player runs out of cards during the war, they lose.
-            checkWinner();
-            warDeck.push(playerDeck.shift());
-            warDeck.push(computerDeck.shift());
-            checkWinner();
-            computerCardBack.textContent = computerDeck.length;
-            playerCardBack.textContent = playerDeck.length;
             return;
         }
     }
@@ -296,8 +301,6 @@ function compareCards(playerMove, computerMove) {
             displayMoveInfo.textContent = 'Player wins War';
             // Check if there is a winner
             checkWinner();
-            computerCardBack.textContent = computerDeck.length;
-            playerCardBack.textContent = playerDeck.length;
             return;
         }
         // If the computer's card is higher
@@ -309,8 +312,6 @@ function compareCards(playerMove, computerMove) {
             displayMoveInfo.textContent = 'Computer wins War';
             // Check if there is a winner
             checkWinner();
-            computerCardBack.textContent = computerDeck.length;
-            playerCardBack.textContent = playerDeck.length;
             return;
         }
         // If there's a tie again
@@ -319,16 +320,15 @@ function compareCards(playerMove, computerMove) {
             warDeck.push(playerMove);
             warDeck.push(computerMove);
             displayMoveInfo.textContent = 'Another War!';
+            // Put two cards (face-down) of each player to the war deck
+            playerDeck.splice(0, 2).forEach((card) => {
+                warDeck.push(card);
+            });
+            computerDeck.splice(0, 2).forEach((card) => {
+                warDeck.push(card);
+            });
             // Check if there is a winner. If the player runs out of cards during the war phase, they lose the game.
             checkWinner();
-            warDeck.push(playerDeck.shift());
-            warDeck.push(computerDeck.shift());
-            checkWinner();
-            warDeck.push(playerDeck.shift());
-            warDeck.push(computerDeck.shift());
-            checkWinner();
-            computerCardBack.textContent = computerDeck.length;
-            playerCardBack.textContent = playerDeck.length;
             return;
         }
     }
@@ -342,19 +342,15 @@ function checkWinner() {
     let playerScore = document.getElementById('player-score');
     let computerScore = document.getElementById('computer-score');
 
-    // Prevent an infinite game loop - randomize decks every tenth move
-    if (parseInt(movesCounter.textContent) % 10 === 0) {
-        computerDeck = computerDeck.sort(() => Math.random() - 0.5);
-        playerDeck = playerDeck.sort(() => Math.random() - 0.5);
-    }
+    hideEmptyDeck();
 
-    // If the computer's deck is empty, the player wins
-    if (computerDeck.length === 0) {
-        // Display a sweetalert2 with the message 'Player Wins!'
+    // If both players has empty decks, it's a draw. No points added to their scores.
+    if (playerDeck.length === 0 && computerDeck.length === 0) {
+        // Display a sweetalert2 with the message 'It's a draw!'
         swal.fire({
-            iconHtml: '<i class="fa-solid fa-crown"></i>',
+            iconHtml: '<i class="fa-regular fa-handshake"></i>',
             html: `
-        <p><strong>Player Wins!</strong></p>`,
+        <p><strong>It's a draw!</strong></p>`,
             showCloseButton: true,
             allowEnterKey: true,
             allowEscapeKey: true,
@@ -367,11 +363,9 @@ function checkWinner() {
         });
         // Hide the play button
         playButton.classList.add('hidden');
-        // Increase the player's score by 1
-        playerScore.textContent = parseInt(playerScore.textContent) + 1;
         return;
     }
-    // If the player's deck is empty, the computer wins
+    // If the player's deck is empty, the computer wins 
     else if (playerDeck.length === 0) {
         // Display a sweetalert2 with the message 'Computer Wins!'
         swal.fire({
@@ -392,6 +386,29 @@ function checkWinner() {
         playButton.classList.add('hidden');
         // Increase the computer's score by 1
         computerScore.textContent = parseInt(computerScore.textContent) + 1;
+        return;
+    }
+    // If the computer's deck is empty, the player wins
+    else if (computerDeck.length === 0) {
+        // Display a sweetalert2 with the message 'Player Wins!'
+        swal.fire({
+            iconHtml: '<i class="fa-solid fa-crown"></i>',
+            html: `
+        <p><strong>Player Wins!</strong></p>`,
+            showCloseButton: true,
+            allowEnterKey: true,
+            allowEscapeKey: true,
+            customClass: {
+                popup: 'swal-popup',
+                closeButton: 'swal-button',
+                icon: 'swal-icon',
+                confirmButton: 'swal-button',
+            }
+        });
+        // Hide the play button
+        playButton.classList.add('hidden');
+        // Increase the player's score by 1
+        playerScore.textContent = parseInt(playerScore.textContent) + 1;
         return;
     }
 }
