@@ -153,6 +153,10 @@ main {
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
+.less-padding {
+    padding: 5px 3px;
+}
+
 /* Play button */
 #play-button {
     font-size: 1.4rem;

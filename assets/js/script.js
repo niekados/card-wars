@@ -38,7 +38,7 @@ buttons.forEach(button => button.addEventListener('click', (event) => {
     // Deck Size button (small)
     if (buttonType === 'small-deck') {
         button.setAttribute('data-type', 'large-deck');
-        button.innerHTML = '<i class="fa-solid fa-layer-group"></i> Large';
+        button.innerHTML = '<i class="fa-solid fa-layer-group"></i> 52 Cards';
         deckSize = 'full';
         resetGame()
         startGame()
@@ -47,7 +47,7 @@ buttons.forEach(button => button.addEventListener('click', (event) => {
     // Deck Size button (large)
     if (buttonType === 'large-deck') {
         button.setAttribute('data-type', 'small-deck');
-        button.innerHTML = '<i class="fa-solid fa-layer-group"></i> Small';
+        button.innerHTML = '<i class="fa-solid fa-layer-group"></i> 20 Cards';
         deckSize = 'small';
         resetGame()
         startGame()
