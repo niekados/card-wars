@@ -2,6 +2,10 @@
 
 Card Wars is a simple card game that brings back memories of my childhood. It was the first card game I learned to play, and it quickly became my favourite. It's easy to learn with basic rules, and matches can be very entertaining, although they can last an eternity. I want to recreate my childhood experience for myself and to share it with others, especially with little ones! It can be challenging to find an adult opponent with the patience or a parent with the time to play these lengthy matches with their children, so why not entrust this task to the most patient opponent of all - the computer!
 
+![am-i-responsive](assets/testing/am-i-responsive.png)
+
+**Link to live page: [Card Wars](https://niekados.github.io/card-wars/index.html)**
+
 ## Game Rules
 
 **Objective:**
