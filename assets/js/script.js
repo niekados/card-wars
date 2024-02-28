@@ -201,6 +201,7 @@ function resetGame() {
  * Initiates card moves for both the computer and player.
  */
 function playGame() {
+
     // Get the next card from the player's deck
     let playerMove = playerDeck.shift();
 
@@ -238,7 +239,7 @@ function playGame() {
  */
 function compareCards(playerMove, computerMove) {
 
-    // If there's no cards in the war deck
+    // If there are no cards in the war deck
     if (warDeck.length === 0) {
         // If the player's card is higher
         if (playerMove[1] > computerMove[1]) {
@@ -258,14 +259,23 @@ function compareCards(playerMove, computerMove) {
             checkWinner();
             return;
         }
-        // If there's a tie
+        // If there's a tie, card war starts. Placing two cards face down.
         else {
             // Put both cards in the war deck
             warDeck.push(playerMove);
             warDeck.push(computerMove);
             displayMoveInfo.textContent = 'Card War!';
-            // Check if there is a winner. If player runs out of cards during war phase, he looses the game.
+            // Check if there is a winner. If the player runs out of cards during the war phase, they lose the game.
             checkWinner();
+            warDeck.push(playerDeck.shift());
+            warDeck.push(computerDeck.shift());
+            // Check winner after placing each card in the war deck. If the player runs out of cards during the war, they lose.
+            checkWinner();
+            warDeck.push(playerDeck.shift());
+            warDeck.push(computerDeck.shift());
+            checkWinner();
+            computerCardBack.textContent = computerDeck.length;
+            playerCardBack.textContent = playerDeck.length;
             return;
         }
     }
@@ -280,6 +290,8 @@ function compareCards(playerMove, computerMove) {
             displayMoveInfo.textContent = 'Player wins War';
             // Check if there is a winner
             checkWinner();
+            computerCardBack.textContent = computerDeck.length;
+            playerCardBack.textContent = playerDeck.length;
             return;
         }
         // If the computer's card is higher
@@ -291,6 +303,8 @@ function compareCards(playerMove, computerMove) {
             displayMoveInfo.textContent = 'Computer wins War';
             // Check if there is a winner
             checkWinner();
+            computerCardBack.textContent = computerDeck.length;
+            playerCardBack.textContent = playerDeck.length;
             return;
         }
         // If there's a tie again
@@ -299,20 +313,34 @@ function compareCards(playerMove, computerMove) {
             warDeck.push(playerMove);
             warDeck.push(computerMove);
             displayMoveInfo.textContent = 'Another War!';
-            // Check if there is a winner. If player runs out of cards during war phase, he looses the game.
+            // Check if there is a winner. If the player runs out of cards during the war phase, they lose the game.
             checkWinner();
+            warDeck.push(playerDeck.shift());
+            warDeck.push(computerDeck.shift());
+            checkWinner();
+            warDeck.push(playerDeck.shift());
+            warDeck.push(computerDeck.shift());
+            checkWinner();
+            computerCardBack.textContent = computerDeck.length;
+            playerCardBack.textContent = playerDeck.length;
             return;
         }
     }
 }
 
 /**
- * Checks if there is a winner based on the computer or player's deck length.
+ * Checks if there is a winner based on the length of the computer's or player's deck.
  */
 function checkWinner() {
     // Get the player's and computer's score elements from the DOM
     let playerScore = document.getElementById('player-score');
     let computerScore = document.getElementById('computer-score');
+
+    // Prevent an infinite game loop - randomize decks every tenth move
+    if (parseInt(movesCounter.textContent) % 10 === 0) {
+        computerDeck = computerDeck.sort(() => Math.random() - 0.5);
+        playerDeck = playerDeck.sort(() => Math.random() - 0.5);
+    }
 
     // If the computer's deck is empty, the player wins
     if (computerDeck.length === 0) {
@@ -359,7 +387,7 @@ function checkWinner() {
         // Increase the computer's score by 1
         computerScore.textContent = parseInt(computerScore.textContent) + 1;
         return;
-    }
+    }  
 }
 
 /**
