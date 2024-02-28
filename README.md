@@ -17,9 +17,9 @@ Card Wars is a simple card game that brings back memories of my childhood. It wa
 **Gameplay:**
 - Players take turns flipping over one card at a time from the top of their decks and placing them face-up in the middle of the playing area.
 - The player with the higher card wins the round. If both cards are of the same value, it results in a "war."
-- In the case of a war, each player places another set of cards face-up over the cards in the war.
+- In the case of a war, each player places two cards face-down and another set of cards face-up over the cards in the war.
 - In case the cards are equal again, another "war" happens on top of the cards already in the war.
-- The player who wins the war collects all the face-up cards in the middle of the playing area and places them at the bottom of their deck.
+- The player who wins the war collects all the cards in the middle of the playing area and places them at the bottom of their deck.
 - If a player runs out of cards during a war, they lose the game. Otherwise, the game continues until one player wins all the cards.
 
 ## Startegy
@@ -139,3 +139,11 @@ To deploy your project to GitHub Pages:
 ## Credits
 - [CSS Background Patterns](https://www.magicpattern.design/tools/css-backgrounds) are used to add a 'exercise book page' style to the background of the main element. These patterns were created by [Jim Raptis](https://twitter.com/d__raptis).
 - [Imperfect Buttons](https://codepen.io/tmrDevelops/pen/VeRvKX) are a set of button styles designed to add a hand-drawn aesthetic to buttons and card borders. This collection was created by [Tiffany Rayside](https://twitter.com/tmrDevelops).
+
+## Testing and Validation
+Please follow **[this link](TESTING.md)** for Testing and Validation. 
+
+## Future Features:
+1. Enhance the user experience by incorporating animations for card movements and war deck interactions, providing visual cues when cards are placed face down and representing deck height through visual elements.
+2. Provide users with the ability to personalize their experience by adding the option to switch between various card and background themes, allowing for a customizable and visually engaging game environment.
+3. Introduce user accounts with a "Highest Score" feature and game statistics. This will enable players to revisit the game and engage with their progress data, offering a deeper level of engagement and challenge.
