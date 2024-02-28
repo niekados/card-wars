@@ -90,6 +90,7 @@ main {
 /* Game area labels */
 .game-labels {
     writing-mode: vertical-lr;
+    transform: rotate(180deg);
     color: #fffdf7;
     background-color: #084194;
     font-weight: 500;
