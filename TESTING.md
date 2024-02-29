@@ -82,3 +82,25 @@ While conducting testing, several issues were identified that remain unresolved:
 1. **Mobile Device CSS Styles for Card Suits:** On mobile devices, CSS styles for card suits are not recognized, and they are replaced with emoji icons by default. While this may appear as a nice feature, it was not the intended behavior. The original intention was to display clubs and spades suits in an ink blue color, rather than black emojis. This issue may be addressed in future updates to the game.
 2. **Card Deck Display:** In some scenarios, such as when a card deck runs out of cards during gameplay, the deck is not hidden as intended, and the deck size is displayed as zero. While this is not intended behavior, it may occur in specific scenarios. This issue is not currently addressed.
 3. **Design Flaw in War Scenario:** In multiple war scenarios, or when war results are displayed, there may be a perception that the game's mathematical logic is representing the wrong deck count. This is not a bug but a design flaw. For example, in a single war scenario, when the war result is displayed, it may appear as though 8 cards are missing between the computer and player decks. However, this is because two cards from the initial card war start are still in the war deck, along with an additional 6 cards (4 face-down and 2 face-up) between both players in the war pile. With the next move, all cards are returned, and deck sizes are displayed correctly again. This issue may be more apparent during multiple wars or when the game ends with one of the players running out of cards during the war phase.
+
+## HTML validation [The W3C Markup Validation Service](https://validator.w3.org/)
+![Home Page](assets/testing/html-validation.png)
+
+## CSS validation [The W3C CSS Validation Service - Jigsaw](https://jigsaw.w3.org/css-validator/)
+![CSS](assets/testing/css-validation.png)
+
+## JavaScript validation [Syntax Validator - Esprima](https://esprima.org/demo/validate.html)
+![CSS](assets/testing/js-validation.png)
+
+## Audits for performance, accessibility and progressive web apps [Google Lighthouse](https://developer.chrome.com/docs/lighthouse)
+
+#### Desktop
+![Index Lighthouse Desktop](assets/testing/lighthouse-desktop.png)
+
+#### Mobile
+![Index Lighthouse Desktop](assets/testing/lighthouse-mobile.png)
+
+## Website responsiveness [Am I Responsive](https://ui.dev/amiresponsive)
+![Home Page](assets/testing/am-i-responsive.png)
+
+## Testing User Stories
