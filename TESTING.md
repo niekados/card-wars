@@ -9,7 +9,6 @@
 - [Google Lighthouse - Audits for performance, accessibility and progressive web apps](#audits-for-performance-accessibility-and-progressive-web-apps-google-lighthouse)
 - [Website responsiveness](#website-responsiveness-am-i-responsive)
 - [Testing User Stories](#testing-user-stories)
-- [Test Form Submission](#test-form-submission-formspree)
 
 ## Testing
 The following steps were taken to test the website:
@@ -73,14 +72,14 @@ During testing, several bugs were identified and addressed. While the list below
 2. **Confusion Over Game Buttons:** Some family members were initially confused about the buttons and how to start and play the game. To address this, the game rules were updated to provide clear explanations of each button's function and how to start and play the game. The rules were also reviewed and improved for greater clarity.
 3. **Prevention of Infinite Game Loop:** To prevent a possible infinite game loop, additional measures were taken. During war scenarios, the game now places three cards (two face-down and one face-up) instead of one on top of the war cards. This greatly increases the chances of capturing cards like aces and kings, which are often the top cards involved in wars. Additionally, to address scenarios where cards were randomly shuffled in a way that prevented progression, a function to shuffle the player and computer decks every tenth move was introduced. This resolved the issue of an infinite game loop.
 4. **Multiple Wars and Running Out of Cards:** Testing revealed an issue where multiple wars following one another resulted in both players running out of cards, yet one player was still declared the winner. This was not intended. To address this, a third option, "Draw", was added to the checkWinner function. Now, when players run out of cards during gameplay, the game correctly registers a draw and assigns no points or victory to either player.
-5. **Responsive Design Issues:** While the project was developed primarily using a MacBook Air, which has a wide but not tall screen aspect ratio, it was observed that the game area and cards did not display correctly on tablet and wide monitors. Additionally, in Chrome DevTools' responsive mode, it was noted that there were issues on very small screens where the game controls and cards did not have enough space to be visible simultaneously. To resolve these issues, margins were adjusted for taller screens, and the card size was increased for devices with larger or higher pixel density screens. Furthermore, adjustments were made to accommodate very small screens, ensuring that game controls and cards were visible simultaneously.
+5. **Responsive Design Issues:** While the project was developed primarily using a MacBook Air, which has a wide but not tall screen aspect ratio, it was observed that the game area and cards did not display correctly on tablets and wide monitors. Additionally, in Chrome DevTools' responsive mode, it was noted that there were issues on very small screens where the game controls and cards did not have enough space to be visible simultaneously. To resolve these issues, margins were adjusted for taller screens, and the card size was increased for devices with larger or higher pixel-density screens. Furthermore, adjustments were made to accommodate very small screens, ensuring that game controls and cards were visible simultaneously.
 
 ### Unfixed bugs
 
 While conducting testing, several issues were identified that remain unresolved:
 
-1. **Mobile Device CSS Styles for Card Suits:** On mobile devices, CSS styles for card suits are not recognized, and they are replaced with emoji icons by default. While this may appear as a nice feature, it was not the intended behavior. The original intention was to display clubs and spades suits in an ink blue color, rather than black emojis. This issue may be addressed in future updates to the game.
-2. **Card Deck Display:** In some scenarios, such as when a card deck runs out of cards during gameplay, the deck is not hidden as intended, and the deck size is displayed as zero. While this is not intended behavior, it may occur in specific scenarios. This issue is not currently addressed.
+1. **Mobile Device CSS Styles for Card Suits:** On mobile devices, CSS styles for card suits are not recognized, and they are replaced with emoji icons by default. While this may appear as a nice feature, it was not the intended behaviour. The original intention was to display clubs and spades suits in an ink-blue colour, rather than black emojis. This issue may be addressed in future updates to the game.
+2. **Card Deck Display:** In some scenarios, such as when a card deck runs out of cards during gameplay, the deck is not hidden as intended, and the deck size is displayed as zero. While this is not intended behaviour, it may occur in specific scenarios. This issue is not currently addressed.
 3. **Design Flaw in War Scenario:** In multiple war scenarios, or when war results are displayed, there may be a perception that the game's mathematical logic is representing the wrong deck count. This is not a bug but a design flaw. For example, in a single war scenario, when the war result is displayed, it may appear as though 8 cards are missing between the computer and player decks. However, this is because two cards from the initial card war start are still in the war deck, along with an additional 6 cards (4 face-down and 2 face-up) between both players in the war pile. With the next move, all cards are returned, and deck sizes are displayed correctly again. This issue may be more apparent during multiple wars or when the game ends with one of the players running out of cards during the war phase.
 
 ## HTML validation [The W3C Markup Validation Service](https://validator.w3.org/)
@@ -104,3 +103,31 @@ While conducting testing, several issues were identified that remain unresolved:
 ![Home Page](assets/testing/am-i-responsive.png)
 
 ## Testing User Stories
+
+New users of the game would like to:
+- Easily learn the rules of the game.
+![Game Rules](assets/testing/game-rules.png)
+- Play "Card Wars" and enjoy a fun gaming experience.
+![Game Play](assets/testing/game-play.png)
+- Receive clear feedback on their actions during the game.
+![Game Feedback](assets/testing/score-and-game-feedback.png)
+- Be able to track their progress in the game.
+![Score](assets/testing/score-and-game-feedback.png)
+- Control their gaming experience.
+![Header Buttons](assets/testing/header-control-buttons.png)
+![Play Button](assets/testing/play-button.png)
+- Explore other projects created by the developer or contact the developer.
+![Social Links](assets/testing/social-links.png)
+
+Returning users would like to:
+- Have a quick reminder of the game rules.
+![Game Rules](assets/testing/game-rules.png)
+- Continue to play and enjoy "Card Wars."
+![Game Play](assets/testing/game-play.png)
+- Experience the same simple controls and feedback as before.
+![Header Buttons](assets/testing/header-control-buttons.png)
+![Play Button](assets/testing/play-button.png)
+- Easily track their progress in the game.
+![Score](assets/testing/score-and-game-feedback.png)
+- Explore other projects by the developer or get in touch with the developer.
+![Social Links](assets/testing/social-links.png)
